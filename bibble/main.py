@@ -21,7 +21,7 @@ MONTHS = {
 
 def _author_fmt(author):
     """Format an author's full name."""
-    return u' '.join(author.first() + author.middle() + author.last())
+    return u' '.join(author.first_names + author.middle_names + author.last_names)
 
 
 def _andlist(ss, sep=', ', seplast=', and ', septwo=' and '):
@@ -45,7 +45,13 @@ def _venue_type(entry):
     """Expand a venue type to a longer English description."""
     venuetype = ''
     if entry.type == 'inbook':
-        venuetype = 'Chapter in '
+        venuetype = 'Book Chapter'
+    elif entry.type == 'article':
+        venuetype = 'Journal'
+    elif entry.type == 'workshop':
+        venuetype = 'Workshop'
+    elif entry.type == 'inproceedings':
+        venuetype = 'Conference'
     elif entry.type == 'techreport':
         venuetype = 'Technical Report '
     elif entry.type == 'phdthesis':
