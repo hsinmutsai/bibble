@@ -1,5 +1,9 @@
 bibble
 ======
+2020/09/21 [Michael Tsai] Some updates:
+- Change to use first_names, middle_names, last_names
+- Change venue_type handling function to reflect the ones used in my own web site .bib file
+
 
 A tool that turns a BibTeX file into a webpage through a template of your
 choice.
